@@ -1,0 +1,116 @@
+.main {
+    width: 100%;
+}
+
+.new-contact {
+    height: 100vh;
+    width: 50%;
+    padding: 15px;
+}
+
+.old-contact {
+    height: 100vh;
+    width: 50%;
+    padding: 15px;
+}
+
+
+.news-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-form {
+    border: 1px solid #0099ff;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border-radius: 15px;
+    padding: 15px;
+    height: 100vh;
+}
+
+.new-title {
+    margin-bottom: 0.5rem;
+}
+.news-name {
+    margin-bottom: 0.5rem;
+}
+.num-input {
+    margin-bottom: 2rem;
+    border: 1px solid #0099ff;
+    border-radius: 5px;
+    padding: 2px 10px;
+}
+.num-input:focus {
+    outline: 2px solid #0099ff;
+}
+
+.news-name {
+    margin-bottom: 1rem;
+    border: 1px solid #0099ff;
+    border-radius: 5px;
+    padding: 2px 10px;
+}
+.news-name:focus {
+    outline: 2px solid #0099ff;
+}
+
+.news-select {
+    margin-bottom: 1rem;
+    border: 1px solid #0099ff;
+    border-radius: 5px;
+    padding: 2px 10px;
+}
+.news-select:focus {
+    outline: 2px solid #0099ff;
+}
+
+.tabs-box {
+    border: 1px solid #0099ff;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border-radius: 15px;
+    padding: 15px;
+    height: 100vh;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.contact-box {
+    width: 100%;
+    border-top: 2px solid rgb(0, 153, 255);
+    border-bottom: 1px solid rgb(0, 153, 255);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+   
+}
+.contact-list {
+    list-style: none;
+}
+
+.f-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.l-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.t-tell {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 !important;
+    text-decoration: none;
+}
+
+
