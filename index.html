@@ -23,9 +23,9 @@
                     <label class="new-title">Category:</label>
                     <input id="conSelect" class="news-name" type="text" list="date" required>
                     <datalist class="news-select" id="date">
-                        <option id="conFamily" class="category">Family</option>
-                        <option id="conFriend" >Friend</option>
-                        <option id="conColl">Collective</option>
+                        <option id="conFamily" class="category" value="Family">Family</option>
+                        <option id="conFriend" value="Friend" >Friend</option>
+                        <option id="conColl" value="Collective">Collective</option>
                     </datalist>
                     <button id="sumbitBtn" type="submit" class="btn btn-primary submit-btn">Submit</button>
                 </form>
@@ -33,7 +33,7 @@
                 <div class="old-contact">
                     <h2>Contact</h2>
                     <div class="tabs-box">
-                        <div class="btns-box">
+                        <div class="btns-box" id="btnGroup">
                             <button id="allBtn" class="btn btn-primary">All</button>
                             <button id="familyBtn" class="btn btn-primary">Family</button>
                             <button id="friendBtn"  class="btn btn-primary">Friends</button>

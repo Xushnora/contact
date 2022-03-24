@@ -1,16 +1,31 @@
 let elForm = document.querySelector('#conForm');
-let sumbitBtn = document.querySelector('#sumbitBtn');
 let elFirstName = document.querySelector('#firstName');
 let elTelNum = document.querySelector('#telNum');
 let elSelect = document.querySelector('#conSelect');
-let listBox = document.querySelector('.list');
+let elListGroup = document.querySelector('#listGroup');
+let elBtnGroup = document.querySelector('#btnGroup');
 let elFamily = document.querySelector('#familyBtn');
 let elFriend = document.querySelector('#friendBtn');
-let elColl = document.querySelector('#collBtn');
-let elListGroup = document.querySelector('#listGroup');
+let elCollective = document.querySelector('#collBtn');
 
-let newArr = [];
+let newArr = [
+    {name: 'Onajonim', number: '998942971280', category: 'Family'},
+    {name: 'Laziza', number: '998332971280', category: 'Friends'},
+    {name: 'Xumora', number: '998992971280', category: 'Collective'},
+];
 let newListArr = [];
+
+newArr.forEach((item) => {
+    newListArr = newArr.map((item) => {
+        return `
+        <li class="list-group-item">
+        ${item.name}: ${item.number}
+         <span class="float-end badge bg-info">${item.category}</span></li>
+        `
+    });
+
+    elListGroup.innerHTML = newListArr.join("");
+})
 
 elForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -28,7 +43,6 @@ elForm.addEventListener('submit', (e) => {
          <span class="float-end badge bg-info">${item.category}</span></li>
         `
     });
-
     elListGroup.innerHTML = newListArr.join("");
 
    console.log(newArr);
@@ -36,8 +50,33 @@ elForm.addEventListener('submit', (e) => {
    elFirstName.value = "";
    elTelNum.value = "";
    elSelect.value = "";
-
 })
+
+elBtnGroup.addEventListener('click', (e) => {
+    function myFunc (index) {
+        if(e.target.textContent === index) {
+            let newFamily = newArr.filter((item) => {
+                return item.category == index;
+            })
+    
+            newListArr = newFamily.map((item) => {
+                return `
+                <li class="list-group-item">
+                ${item.name}: ${item.number}
+                 <span class="float-end badge bg-info">${item.category}</span></li>
+                `
+            });
+            elListGroup.innerHTML = newListArr.join("");
+        }
+    }
+
+    myFunc(e.target.textContent);
+})
+
+
+
+
+
 
 
 
