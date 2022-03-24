@@ -16,71 +16,37 @@
                 <div class="new-contact">
                     <h2>New Contact</h2>
                 <form  class="news-form" id="conForm">
-                    <label class="new-title">First name:</label>
+                    <label class="new-title">Name:</label>
                     <input id="firstName" class="news-name" type="text" required>
-                    <label class="new-title">Last name:</label>
-                    <input id="lastName" class="news-name" type="text" required>
                     <label class="new-title">Number:</label>
                     <input id="telNum" class="num-input" type="number" required>
-                    <select class="news-select" id="conSelect">
-                        <option id="conAll" value="0">All</option>
-                        <option id="conFamily" value="1">Family</option>
-                        <option id="conFriend" value="2">Friend</option>
-                        <option id="conColl" value="3">Collective</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                    <label class="new-title">Category:</label>
+                    <input id="conSelect" class="news-name" type="text" list="date" required>
+                    <datalist class="news-select" id="date">
+                        <option id="conFamily" class="category">Family</option>
+                        <option id="conFriend" >Friend</option>
+                        <option id="conColl">Collective</option>
+                    </datalist>
+                    <button id="sumbitBtn" type="submit" class="btn btn-primary submit-btn">Submit</button>
                 </form>
                 </div>
                 <div class="old-contact">
                     <h2>Contact</h2>
-                   <div class="tabs-box">
-                        <ul class="nav nav-pills mb-3 contacts" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation" id="familyBtn">
-                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Family</button>
-                            </li>
-                            <li class="nav-item" role="presentation" id="friendBtn">
-                            <button class="nav-link" id="pills-profile-tab friendBtn" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Friends</button>
-                            </li>
-                            <li class="nav-item" role="presentation" id="collectivBtn">
-                            <button class="nav-link" id="pills-contact-tab " data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Collective</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <div class="contact-box" id="familyBox">
-                                    <ul class="contact-list">
-                                        <li class="contact-item" id="listItem">
-                                           <p class="f-name">mom</p>
-                                           <p class="l-name">Oyijonim</p>
-                                           <a class="t-tell" href="tel:998992002020">33 909 12 78</a>  
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                <div class="contact-box" id="familyBox">
-                                    <ul class="contact-list">
-                                        <li class="contact-item" id="listItem">
-                                           <p class="f-name">Laziza</p>
-                                           <p class="l-name">Abdulahatova</p>
-                                           <a class="t-tell" href="tel:998992002020">97 909 12 04</a>  
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                <div class="contact-box" id="familyBox">
-                                    <ul class="contact-list">
-                                        <li class="contact-item" id="listItem">
-                                           <p class="f-name">Xumora</p>
-                                           <p class="l-name">Esonova</p>
-                                           <a class="t-tell" href="tel:998992002020">94 909 59 69</a>  
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <div class="tabs-box">
+                        <div class="btns-box">
+                            <button id="allBtn" class="btn btn-primary">All</button>
+                            <button id="familyBtn" class="btn btn-primary">Family</button>
+                            <button id="friendBtn"  class="btn btn-primary">Friends</button>
+                            <button id="collBtn"  class="btn btn-primary">Collective</button>
                         </div>
-                   </div>
+                        <div class="mt-3">
+                            <ul class="list-group" id="listGroup">
+                                <!-- <li class="list-group-item">
+                                    Onajonim: 33 000 01 02
+                                  <span class="float-end badge bg-info">Family</span></li> -->
+                              </ul>
+                        </div>
+                   </div> 
                 </div>
            </div>
         </div>

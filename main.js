@@ -1,93 +1,49 @@
 let elForm = document.querySelector('#conForm');
+let sumbitBtn = document.querySelector('#sumbitBtn');
 let elFirstName = document.querySelector('#firstName');
-let elLastName = document.querySelector('#lastName');
 let elTelNum = document.querySelector('#telNum');
-// select qismi
 let elSelect = document.querySelector('#conSelect');
-let elAll = document.querySelector('#conAll');
-let elFamily = document.querySelector('#conFamily');
-let elFriend = document.querySelector('#conFriend');
-let elCollect = document.querySelector('#conColl');
-// buttons 
-let elFamilyBtn = document.querySelector('#familyBtn')
-let elFriendBtn = document.querySelector('#friendBtn')
-let elCollective = document.querySelector('#collectivBtn');
-// qo'shiladigan list
-let elNewBox = document.querySelector('#familyBox');
+let listBox = document.querySelector('.list');
+let elFamily = document.querySelector('#familyBtn');
+let elFriend = document.querySelector('#friendBtn');
+let elColl = document.querySelector('#collBtn');
+let elListGroup = document.querySelector('#listGroup');
 
-
-
+let newArr = [];
+let newListArr = [];
 
 elForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-   let firstNameVal = elFirstName.value;
-   let lastNameVal = elLastName.value;
-   let tellNumVal = elTelNum.value;
-   let selectiv = elSelect.value;
+   newArr.push({
+       name: elFirstName.value,
+       number:  elTelNum.value,
+       category: elSelect.value
+    });
 
-    for (let i = 0; i < Array.from(selectiv).length; i++) {
-        if (selectiv[i] == 1) {
-            let box = document.createElement('div');
+    newListArr = newArr.map((item) => {
+        return `
+        <li class="list-group-item">
+        ${item.name}: ${item.number}
+         <span class="float-end badge bg-info">${item.category}</span></li>
+        `
+    });
 
-            box.innerHTML = `
-             <div class="contact-box" id="familyBox">
-                 <ul class="contact-list">
-                     <li class="contact-item" id="listItem">
-                         <p class="f-name">${firstNameVal}</p>
-                         <p class="l-name">${lastNameVal}</p>
-                         <a class="t-tell" href="tel:998992002020">${tellNumVal}</a> 
-                     </li>
-                 </ul>
-             </div>
-            `
-             
-            elNewBox.appendChild(box);
-            elFamilyBtn.appendChild(elNewBox);
-            
-        } else if (selectiv[i] == 2) {
-            let box = document.createElement('div');
+    elListGroup.innerHTML = newListArr.join("");
 
-            box.innerHTML = `
-             <div class="contact-box" id="familyBox">
-                 <ul class="contact-list">
-                     <li class="contact-item" id="listItem">
-                         <p class="f-name">${firstNameVal}</p>
-                         <p class="l-name">${lastNameVal}</p>
-                         <a class="t-tell" href="tel:998992002020">${tellNumVal}</a> 
-                     </li>
-                 </ul>
-             </div>
-            `
-    
-            elNewBox.appendChild(box);
-            elFriendBtn.appendChild(elNewBox);
+   console.log(newArr);
 
-        } else if (selectiv[i] == 3) {
-            let box = document.createElement('div');
+   elFirstName.value = "";
+   elTelNum.value = "";
+   elSelect.value = "";
 
-            box.innerHTML = `
-             <div class="contact-box" id="familyBox">
-                 <ul class="contact-list">
-                     <li class="contact-item" id="listItem">
-                         <p class="f-name">${firstNameVal}</p>
-                         <p class="l-name">${lastNameVal}</p>
-                         <a class="t-tell" href="tel:998992002020">${tellNumVal}</a> 
-                     </li>
-                 </ul>
-             </div>
-            `
-    
-            elNewBox.appendChild(box);
-            elCollective.appendChild(elNewBox);
+})
 
-        }
 
-    }   
 
-    elFirstName.value = "";
-    elLastName.value = "";
-    elTelNum.value = "";
-    elSelect.value = "";
-});
+
+
+
+
+
 
